@@ -16,27 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django import render
-from .views import views
-from .views import views 
-from .views import bariloche
-from .views import carlospaz
-from .views import salta 
+from .views import IndexView
+from .views import BarilochePage
+from .views import CarlosPazPage
+from .views import SaltaPage
 
-
-
-
-#urlpatterns = [
-
-    #path('admin/', admin.site.urls),
-    #path('', IndexView.as_view(), name="index"),
-    #path("bariloche", BarilochePage.as_view(), name="bariloche"),    
-    #path("carlospaz", CarlosPazPage.as_view(), name="carlospaz"), 
-    #path("salta", SaltaPage.as_view(), name="salta")]
-    
-urlpatterns =[
+urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('bariloche', views.bariloche, name='bariloche'),
-    path('salta', views.salta, name='salta'),
-    path('carlospaz', views.carlospaz, name='carlospaz'),]
+    path('', IndexView.as_view(), name="index"),
+    path("bariloche", BarilochePage.as_view(), name="bariloche"),    
+    path("carlospaz", CarlosPazPage.as_view(), name="carlospaz"), 
+    path("salta", SaltaPage.as_view(), name="salta")]
